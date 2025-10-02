@@ -1,0 +1,10 @@
+name: Test Runner
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: [self-hosted, docker-desktop, dev]
+    steps:
+      - run: echo "🎉 Funcionando en runner local!"
+      - run: uname -a
+      - run: env | sort
