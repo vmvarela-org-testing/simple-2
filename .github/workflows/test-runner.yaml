@@ -1,10 +1,22 @@
-name: Test Runner
-on: workflow_dispatch
+name: Test ARC v2 Runner
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
 
 jobs:
   test:
-    runs-on: [self-hosted, docker-desktop, dev]
+    runs-on: [self-hosted, dev-v2, docker-v2]
     steps:
-      - run: echo "🎉 Funcionando en runner local!"
-      - run: uname -a
-      - run: env | sort
+      - name: Check runner info
+        run: |
+          echo "Runner name: $RUNNER_NAME"
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner arch: $RUNNER_ARCH"
+          uname -a
+          
+      - name: Test Docker
+        run: docker --version || echo "Docker not available"
+        
+      - name: Simple test
+        run: echo "✅ ARC v2 runner is working!"
