@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, dev-v2, docker-v2]
+    runs-on: dev-runners-v2
     steps:
       - name: Check runner info
         run: |
