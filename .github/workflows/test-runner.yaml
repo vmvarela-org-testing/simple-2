@@ -16,7 +16,7 @@ jobs:
           uname -a
           
       - name: Test Docker
-        run: docker --version || echo "Docker not available"
+        run: docker run hello-world || echo "Docker not available"
         
       - name: Simple test
         run: echo "✅ ARC v2 runner is working!"
