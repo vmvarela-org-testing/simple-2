@@ -1,0 +1,22 @@
+name: Test ARC v2 Runner (2)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: arc-runner-set
+    steps:
+      - name: Check runner info
+        run: |
+          echo "Runner name: $RUNNER_NAME"
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner arch: $RUNNER_ARCH"
+          uname -a
+          
+      - name: Test Docker
+        run: docker run hello-world || echo "Docker not available"
+        
+      - name: Simple test
+        run: echo "✅ ARC v2 runner is working!"
