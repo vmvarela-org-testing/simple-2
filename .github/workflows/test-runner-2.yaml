@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: only-simple-2
+    runs-on: only-simple-2b
     steps:
       - name: Check runner info
         run: |
