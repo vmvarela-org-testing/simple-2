@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: dependabot
+    runs-on: only-simple-2
     steps:
       - name: Check runner info
         run: |
