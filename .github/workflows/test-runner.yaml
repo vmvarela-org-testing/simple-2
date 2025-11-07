@@ -19,4 +19,4 @@ jobs:
         run: docker run hello-world || echo "Docker not available"
         
       - name: Simple test
-        run: echo "✅ ARC v2 runner is working!"
+        run: echo "✅ ARC v2 runner is working!" && sleep 60
